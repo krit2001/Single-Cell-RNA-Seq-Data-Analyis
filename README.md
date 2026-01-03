@@ -1,6 +1,6 @@
 # Single-Cell Analysis of Mouse Limb Development (GSE142425)
 
-This repository contains the analysis pipeline for single-cell RNA-seq data from mouse embryonic forelimb development (E11.5–E18.5) [GSE142425]. The workflow focuses on trajectory inference of Col2a1+ lineages using **scVI** for integration and **scVelo** for RNA velocity.
+This repository contains the analysis pipeline for single-cell RNA-seq data from mouse embryonic forelimb development (E11.5–E18.5) [GSE142425]. The workflow focuses on trajectory inference of Col2a1+ lineages using **scVI** for integration and **scVelo** for RNA velocity. Col2a1+ cells are 
 
 ## 🧬 Analysis Workflow
 
