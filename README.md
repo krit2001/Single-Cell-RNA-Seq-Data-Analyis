@@ -13,8 +13,7 @@ I successfully integrated multiple developmental timepoints (E11.5 - E15.5) usin
 - **Left:** Raw data showing batch effects by sample.
 - **Right:** scVI integrated embedding showing biological mixing.
 
-![Integration Result](results/02_integration/umap_scvi_integrated.png) 
-*(Note: Replace this path with your actual image path)*
+![Integration Result](images/timepoint.png)
 
 ### 2. RNA Velocity Analysis
 Using **scVelo (dynamical mode)**, I recovered the vector field for the developing limb mesenchyme. The stream plot below confirms the directionality from progenitors towards the chondrogenic lineage.
