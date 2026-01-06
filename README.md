@@ -1,29 +1,36 @@
-# Single-Cell Analysis of Mouse Limb Development (GSE142425)
+# Analysis of Col2a1+ Cell Fate in Mouse Limb Development
 
-This repository contains the analysis pipeline for single-cell RNA-seq data from mouse embryonic forelimb development (E11.5–E18.5) [GSE142425]. The workflow focuses on trajectory inference of Col2a1+ lineages using **scVI** for integration and **scVelo** for RNA velocity. Col2a1+ cells are 
+**Current Status:** Work in Progress (Jan 2026)
+**Methodology:** scRNA-seq (10x Genomics) -> Scanpy -> scVI -> scVelo
 
-## 🧬 Analysis Workflow
+## Project Overview
+This project investigates the lineage specification of chondrogenic cells (Col2a1+) in the developing mouse limb. I am currently analyzing the [GSE142425](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE142425) dataset to reconstruct developmental trajectories.
 
-The analysis is performed in Python using the `scverse` ecosystem.
+## Current Progress
 
-1.  **Preprocessing**: Quality control, doublet removal, and normalization using [Scanpy](https://scanpy.readthedocs.io/).
-2.  **Integration**: Batch effect correction across developmental timepoints using [scVI](https://scvi-tools.org/).
-3.  **Clustering**: Leiden clustering on the scVI latent space.
-4.  **RNA Velocity**:
-    - Spliced/unspliced quantification (if re-processed from FASTQ).
-    - Velocity estimation using the dynamical model in [scVelo](https://scvelo.readthedocs.io/).
-    - Trajectory inference for chondrogenic (Col2a1+) differentiation.
+### 1. Data Integration (scVI)
+I successfully integrated multiple developmental timepoints (E11.5 - E15.5) using **scVI**. 
+- **Left:** Raw data showing batch effects by sample.
+- **Right:** scVI integrated embedding showing biological mixing.
 
-## 📂 Repository Structure
+![Integration Result](results/02_integration/umap_scvi_integrated.png) 
+*(Note: Replace this path with your actual image path)*
 
-- `notebooks/`: Jupyter notebooks numbered by analysis step.
-- `models/`: Directory for saving trained scVI models (not tracked by git).
-- `data/`: Placeholder for raw and processed `.h5ad` files.
+### 2. RNA Velocity Analysis
+Using **scVelo (dynamical mode)**, I recovered the vector field for the developing limb mesenchyme. The stream plot below confirms the directionality from progenitors towards the chondrogenic lineage.
 
-## 🚀 Getting Started
+![Velocity Stream](results/03_velocity/velocity_stream_plot.png)
 
-### 1. Environment Setup
-Create the conda environment to ensure version compatibility between `scvi-tools` and `scvelo`.
-```bash
-conda env create -f environment/environment.yml
-conda activate scrna_limb
+### 3. Col2a1 Specific Dynamics
+Phase portraits for *Col2a1* indicate strong induction at E13.5.
+
+![Col2a1 Phase](results/03_velocity/phase_portraits_col2a1.png)
+
+## Tools Used
+- **Language:** Python
+- **Core:** Scanpy, AnnData
+- **Integration:** scVI-tools
+- **Trajectory:** scVelo (Dynamical Model)
+
+---
+*Note: Full code and processed objects will be released upon project completion/publication.*
