@@ -16,14 +16,9 @@ I successfully integrated multiple developmental timepoints (E11.5 - E15.5) usin
 ![Integration Result](images/timepoint.png)
 
 ### 2. RNA Velocity Analysis
-Using **scVelo (dynamical mode)**, I recovered the vector field for the developing limb mesenchyme. The stream plot below confirms the directionality from progenitors towards the chondrogenic lineage.
+Using **scVelo (dynamical mode)**, I recovered the vector field for the developing limb mesenchyme. The stream plot below confirms the directionality from Col2a1+ towards the tendon lineage.
 
-![Velocity Stream](results/03_velocity/velocity_stream_plot.png)
-
-### 3. Col2a1 Specific Dynamics
-Phase portraits for *Col2a1* indicate strong induction at E13.5.
-
-![Col2a1 Phase](results/03_velocity/phase_portraits_col2a1.png)
+![Velocity Stream](images/output.png)
 
 ## Tools Used
 - **Language:** Python
